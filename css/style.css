@@ -92,6 +92,12 @@ nav ul li a:hover {
     background: var(--accent-dim);
 }
 
+.container img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
 main.container {
     padding-top: 2rem;
 }
@@ -222,6 +228,7 @@ article.card {
     box-shadow: var(--shadow-card);
     transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
     position: relative;
+    margin-bottom: 1.5rem;
 }
 
 article.card::before {
