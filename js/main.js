@@ -1,27 +1,33 @@
+const form = document.getElementById("filmeForm");
+
 class Filme {
-  constructor(titulo, ano, diretor, genero) {
+  constructor(titulo, genero, minutos, capa, trailer) {
     this.titulo = titulo;
-    this.ano = Number(ano);
-    this.diretor = diretor;
     this.genero = genero;
+    this.minutos = Number(minutos);
+    this.capa = capa;
+    this.trailer = trailer;
   }
 }
 
-let filmes = JSON.parse(localStorage.getItem("filmes")) || [];
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-function salvarLocalStorage() {
-    localStorage.setItem("filmes", JSON.stringify(filmes));
-}
+  const filme = new Filme(
+    document.getElementById("titulo").value,
+    document.getElementById("genero").value,
+    Number(document.getElementById("minutos").value),
+    document.getElementById("capa").value,
+    document.getElementById("trailer").value
+  );
 
-function adicionarFilme() {
-    const titulo = document.getElementById("titulo").value.trim();
-    const ano = document.getElementById("ano").value;
-    const diretor = document.getElementById("diretor").value.trim();
-    const genero = document.getElementById("genero").value;
+  const filmes = JSON.parse(localStorage.getItem("filmes")) || [];
 
-    const filme = new Filme(titulo, ano, diretor, genero);
+  filmes.push(filme);
 
-    filmes.push(filme);
+  localStorage.setItem("filmes", JSON.stringify(filmes));
 
-    salvarLocalStorage();
-}
+  alert("Filme cadastrado!");
+
+  form.reset();
+});

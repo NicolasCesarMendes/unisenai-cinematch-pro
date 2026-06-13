@@ -4,8 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo de Filmes</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <nav>
+        <div class="container">
+            <h1>CineMatch Pro</h1>
+
+            <ul>
+                <li><a href="index.html">Cadastro</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="https://www.imdb.com/chart/top/" target="_blank">Sugestões</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main class="container">
+        <section>
+            <h2>Minha Videoteca</h2>
+
+            <aside class="estatisticas">
+                <h3>Estatísticas</h3>
+
+                <p id="totalFilmes"></p>
+
+                <p id="totalMinutos"></p>
+            </aside>
+
+            <div id="catalogo" class="grid"></div>
+        </section>
+    </main>
+
+    <script src="js/display.js"></script>
 </body>
 </html>
